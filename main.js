@@ -5,23 +5,30 @@ var seleccion_maquina = '';
 var container_imagen_jugador = document.getElementById('imagen-usuario-seleccionada');
 var container_imagen_maquina = document.getElementById('imagen-computadora-seleccionada');
 var container_resultados = document.getElementById('texto-partida');
-var container_puntuacion_jugador = document.getElementById('puntuacion-jugador');
-var container_puntuacion_maquina = document.getElementById('puntuacion-maquina');
+var container_puntuacion_jugador = document.getElementById('puntuacion-del-jugador');
+var container_puntuacion_maquina = document.getElementById('puntuacion-del-computador');
+var container_button = document.getElementById('buttonPlay');
 
-
+container_puntuacion_jugador.innerHTML = puntuacion_jugador
+container_puntuacion_maquina.innerHTML = puntuacion_computadora
 
 function llamarAfuncion(elemento) {
 
     switch (elemento) {
         case 'piedra': container_imagen_jugador.innerHTML = '<img src="img/piedra.png">';
             seleccion_jugador = 'piedra'
+            container_button.classList.remove('disable-button')
 
             break;
         case 'papel': container_imagen_jugador.innerHTML = '<img src="img/papel.png">';
             seleccion_jugador = 'papel'
+            container_button.classList.remove('disable-button')
+
             break;
         case 'tijera': container_imagen_jugador.innerHTML = '<img src="img/tijera.png">';
             seleccion_jugador = 'papel'
+            container_button.classList.remove('disable-button')
+
             break;
     }
 
@@ -29,16 +36,20 @@ function llamarAfuncion(elemento) {
 }
 
 function jugar() {
+
+
     if (seleccion_jugador == '') {
         alert('debes seleccionar primero')
         return
     }
+    container_button.classList.add('disable-button')
+    debugger
     seleccion_de_maquina();
 
     let resultado = verificar_partida(seleccion_jugador, seleccion_maquina)
-    container_resultados.innerHTML = `<p> ${resultado} </p> `
+    //container_resultados.innerHTML = `<p> ${resultado} </p> `
     container_puntuacion_jugador.innerHTML = puntuacion_jugador
-    container_puntuacion_maquina = puntuacion_computadora
+    container_puntuacion_maquina.innerHTML = puntuacion_computadora
     setTimeout(limpiar, 3000)
 
 
@@ -104,6 +115,6 @@ function verificar_partida(selecc_jugador, selecc_maquina) {
 function limpiar() {
     container_imagen_jugador.innerHTML = ''
     container_imagen_maquina.innerHTML = ''
-    container_resultados = `<p> </p> `
+
 }
 

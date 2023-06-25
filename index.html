@@ -57,24 +57,26 @@
                 </div>
 
                 <div>
-                    <button onclick="jugar()">
+                    <button onclick="jugar()" id="buttonPlay" class="button disable-button">
                         Jugar
                     </button>
                 </div>
 
             </div>
             <div class="columna-puntuacion columna-vs">
-                <div id="texto-partida">
-                </div>
-                <h3 id="puntuacion-jugador">
+                <div id="puntuacion">
+                    <p style="margin-right: 15px;">
+                        Jugador: <span id="puntuacion-del-jugador"></span>
+                    </p>
+                    <p>
+                        Maquina: <span id="puntuacion-del-computador"></span>
 
-                </h3>
+                    </p>
+                </div>
                 <h1>
                     vs
                 </h1>
-                <h3 id="puntuacion-maquina">
 
-                </h3>
             </div>
             <div id="columna-3" class="columna-puntuacion">
 
