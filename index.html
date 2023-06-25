@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 2</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container-header">
+            <h1>
+                Piedra, papel o tijeras
+            </h1>
+            <p>Juego hecho por franco curci</p>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section>
+            <div class="columna-1">
+                <div>
+
+                    <h3>
+                        Juegador 1 (tú)
+                    </h3>
+                    <p>
+                        Seleccione pieda, papel o tijera
+                    </p>
+
+                </div>
+
+                <div>
+                    <div class="imagenes-contenedor" onclick="llamarAfuncion('piedra')">
+                        <img src="img/piedra.png" alt="">
+                    </div>
+                    <div class="imagenes-contenedor" onclick="llamarAfuncion('papel')">
+                        <img src="img/papel.png" alt="">
+                    </div>
+                    <div class="imagenes-contenedor" onclick="llamarAfuncion('tijera')">
+                        <img src="img/tijera.png" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="columna-2" class="columna-puntuacion">
+
+
+                <div class="img-contenedor-seleccionado" id="imagen-usuario-seleccionada">
+                </div>
+
+                <div>
+                    <button onclick="jugar()">
+                        Jugar
+                    </button>
+                </div>
+
+            </div>
+            <div class="columna-puntuacion columna-vs">
+                <div id="texto-partida">
+                </div>
+                <h3 id="puntuacion-jugador">
+
+                </h3>
+                <h1>
+                    vs
+                </h1>
+                <h3 id="puntuacion-maquina">
+
+                </h3>
+            </div>
+            <div id="columna-3" class="columna-puntuacion">
+
+
+                <div class="img-contenedor-seleccionado" id="imagen-computadora-seleccionada">
+
+                </div>
+            </div>
+            <div class="columna-4">
+
+                <div>
+
+                    <h3>
+                        Juegador 2 (Computadora)
+                    </h3>
+
+                </div>
+
+                <div>
+                    <div class="imagenes-contenedor">
+                        <img src="img/piedra.png" alt="">
+                    </div>
+                    <div class="imagenes-contenedor">
+                        <img src="img/papel.png" alt="">
+                    </div>
+                    <div class="imagenes-contenedor">
+                        <img src="img/tijera.png" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Se supone que debe tener copyright?</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
